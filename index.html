@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luxe Couture | Luxury Fashion</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Base Styles & Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --charcoal: #1a1a1a;
+        --navy: #0a1931;
+        --burgundy: #4a0e0e;
+        --forest: #0d3b2a;
+        --beige: #d4c9be;
+        --gold: #c9a96e;
+        --dark-gray: #2d2d2d;
+        --light-gray: #444;
+        --border: rgba(201, 169, 110, 0.2);
+      }
+
+      body {
+        font-family: "Georgia", serif;
+        line-height: 1.6;
+        color: var(--beige);
+        background-color: var(--charcoal);
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Times New Roman", serif;
+        font-weight: normal;
+        letter-spacing: 1px;
+        color: var(--beige);
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        display: inline-block;
+        padding-bottom: 15px;
+      }
+
+      .section-title h2:after {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 2px;
+        background: var(--gold);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .gold {
+        color: var(--gold);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 15px 40px;
+        border: 1px solid var(--gold);
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        background: transparent;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: var(--gold);
+        color: var(--charcoal);
+      }
+
+      .btn-filled {
+        background-color: var(--gold);
+        color: var(--charcoal);
+      }
+
+      .btn-filled:hover {
+        background-color: transparent;
+        color: var(--gold);
+      }
+
+      /* Header & Navigation */
+      header {
+        background-color: var(--navy);
+        padding: 25px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        letter-spacing: 3px;
+        color: var(--gold);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 40px;
+      }
+
+      nav ul li a {
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+        transition: color 0.3s;
+        position: relative;
+      }
+
+      nav ul li a:hover {
+        color: var(--gold);
+      }
+
+      nav ul li a:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        background: var(--gold);
+        left: 0;
+        bottom: -5px;
+        transition: width 0.3s;
+      }
+
+      nav ul li a:hover:after {
+        width: 100%;
+      }
+
+      .cart-icon {
+        position: relative;
+        font-size: 1.2rem;
+      }
+
+      .cart-count {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background-color: var(--burgundy);
+        color: var(--beige);
+        font-size: 0.7rem;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--beige);
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(
+            rgba(10, 25, 49, 0.85),
+            rgba(10, 25, 49, 0.9)
+          ),
+          url("https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80");
+        background-size: cover;
+        background-position: center;
+        height: 90vh;
+        min-height: 700px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: var(--beige);
+      }
+
+      .hero-content h1 {
+        font-size: 4rem;
+        margin-bottom: 20px;
+        letter-spacing: 3px;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 40px;
+        color: var(--beige);
+      }
+
+      /* Featured Products */
+      .products {
+        background-color: var(--dark-gray);
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .product-card {
+        background-color: var(--charcoal);
+        border: 1px solid var(--border);
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .product-img {
+        height: 300px;
+        overflow: hidden;
+      }
+
+      .product-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .product-card:hover .product-img img {
+        transform: scale(1.05);
+      }
+
+      .product-info {
+        padding: 25px;
+        text-align: center;
+      }
+
+      .product-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+      }
+
+      .product-price {
+        font-size: 1.5rem;
+        color: var(--gold);
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+
+      /* Categories */
+      .categories {
+        background-color: var(--navy);
+      }
+
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .category-card {
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--border);
+      }
+
+      .category-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .category-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .category-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(10, 25, 49, 0.7);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: var(--beige);
+        transition: background 0.3s;
+      }
+
+      .category-card:hover .category-overlay {
+        background: rgba(10, 25, 49, 0.5);
+      }
+
+      .category-overlay h3 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+
+      /* About Section */
+      .about {
+        background-color: var(--charcoal);
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .about-text h2 {
+        margin-bottom: 25px;
+        font-size: 2.2rem;
+      }
+
+      .about-text p {
+        margin-bottom: 20px;
+        color: var(--beige);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Testimonials */
+      .testimonials {
+        background-color: var(--dark-gray);
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+      }
+
+      .testimonial-card {
+        background-color: var(--charcoal);
+        padding: 40px 30px;
+        border: 1px solid var(--border);
+        position: relative;
+      }
+
+      .testimonial-card:before {
+        content: '"';
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 4rem;
+        color: var(--gold);
+        opacity: 0.3;
+        font-family: serif;
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 20px;
+        color: var(--beige);
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+      }
+
+      .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 15px;
+      }
+
+      .author-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .author-info h4 {
+        margin-bottom: 5px;
+      }
+
+      .author-info p {
+        font-size: 0.9rem;
+        color: var(--gold);
+      }
+
+      /* Newsletter */
+      .newsletter {
+        background-color: var(--forest);
+        text-align: center;
+        padding: 100px 0;
+      }
+
+      .newsletter h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .newsletter p {
+        max-width: 600px;
+        margin: 0 auto 40px;
+        color: var(--beige);
+      }
+
+      .newsletter-form {
+        max-width: 500px;
+        margin: 0 auto;
+        display: flex;
+      }
+
+      .newsletter-form input {
+        flex: 1;
+        padding: 18px 20px;
+        border: 1px solid var(--border);
+        background-color: var(--charcoal);
+        color: var(--beige);
+        font-size: 1rem;
+      }
+
+      .newsletter-form input:focus {
+        outline: none;
+        border-color: var(--gold);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--navy);
+        padding: 70px 0 30px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 50px;
+        margin-bottom: 50px;
+      }
+
+      .footer-column h3 {
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+        color: var(--gold);
+      }
+
+      .footer-column ul {
+        list-style: none;
+      }
+
+      .footer-column ul li {
+        margin-bottom: 15px;
+      }
+
+      .footer-column ul li a {
+        transition: color 0.3s;
+      }
+
+      .footer-column ul li a:hover {
+        color: var(--gold);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--border);
+        border-radius: 50%;
+        transition: all 0.3s;
+      }
+
+      .social-links a:hover {
+        background-color: var(--gold);
+        color: var(--navy);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid var(--border);
+        font-size: 0.9rem;
+        color: var(--beige);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .hero-content h1 {
+          font-size: 3rem;
+        }
+
+        .about-content {
+          grid-template-columns: 1fr;
+        }
+
+        .about-image {
+          order: -1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          position: fixed;
+          top: 80px;
+          left: -100%;
+          width: 100%;
+          height: calc(100vh - 80px);
+          background-color: var(--navy);
+          transition: left 0.3s;
+          z-index: 99;
+        }
+
+        nav.active {
+          left: 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+          align-items: center;
+          padding-top: 50px;
+        }
+
+        nav ul li {
+          margin: 0 0 30px;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+
+        .newsletter-form {
+          flex-direction: column;
+        }
+
+        .newsletter-form input {
+          margin-bottom: 15px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero {
+          height: 80vh;
+          min-height: 600px;
+        }
+
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+
+        section {
+          padding: 60px 0;
+        }
+
+        .product-grid,
+        .category-grid,
+        .testimonial-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <a href="#" class="logo">LUXE COUTURE</a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <nav id="mainNav">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Collections</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li class="cart-icon">
+              <a href="#"
+                ><i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">3</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <h1>ELEGANCE <span class="gold">REDEFINED</span></h1>
+        <p>
+          Discover our exclusive collection of luxury fashion, crafted with
+          unparalleled attention to detail and timeless design. Experience the
+          epitome of sophistication.
+        </p>
+        <a href="#products" class="btn btn-filled">Explore Collection</a>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products" id="products">
+      <div class="container">
+        <div class="section-title">
+          <h2>Featured <span class="gold">Collections</span></h2>
+        </div>
+
+        <div class="product-grid">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img
+                src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Luxury Watch"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Heritage Chronograph</h3>
+              <p class="product-price">$8,500</p>
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img
+                src="https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Designer Handbag"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Saffiano Leather Tote</h3>
+              <p class="product-price">$3,200</p>
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img
+                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Evening Gown"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Silk Evening Gown</h3>
+              <p class="product-price">$5,700</p>
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card">
+            <div class="product-img">
+              <img
+                src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Men's Suit"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Tailored Wool Suit</h3>
+              <p class="product-price">$4,800</p>
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="categories">
+      <div class="container">
+        <div class="section-title">
+          <h2>Shop By <span class="gold">Category</span></h2>
+        </div>
+
+        <div class="category-grid">
+          <!-- Category 1 -->
+          <div class="category-card">
+            <img
+              src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Watches"
+            />
+            <div class="category-overlay">
+              <h3>Timepieces</h3>
+              <a href="#" class="btn">Explore</a>
+            </div>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="category-card">
+            <img
+              src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Jewelry"
+            />
+            <div class="category-overlay">
+              <h3>Fine Jewelry</h3>
+              <a href="#" class="btn">Explore</a>
+            </div>
+          </div>
+
+          <!-- Category 3 -->
+          <div class="category-card">
+            <img
+              src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Accessories"
+            />
+            <div class="category-overlay">
+              <h3>Accessories</h3>
+              <a href="#" class="btn">Explore</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2>The <span class="gold">Luxe Couture</span> Legacy</h2>
+            <p>
+              Founded in 1985, Luxe Couture represents the pinnacle of luxury
+              fashion, combining timeless elegance with contemporary design. Our
+              collections are crafted by master artisans using only the finest
+              materials sourced from around the world.
+            </p>
+            <p>
+              Each piece in our collection tells a story of exceptional
+              craftsmanship, attention to detail, and a commitment to
+              sustainability and ethical production practices.
+            </p>
+            <p>
+              We believe true luxury is not just about what you wear, but how it
+              makes you feel—empowered, confident, and truly exceptional.
+            </p>
+            <a href="#" class="btn" style="margin-top: 20px">Our Story</a>
+          </div>
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Luxe Couture Store"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-title">
+          <h2>Client <span class="gold">Testimonials</span></h2>
+        </div>
+
+        <div class="testimonial-grid">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              <p>
+                The quality and craftsmanship of my Luxe Couture watch is beyond
+                compare. It's not just a timepiece; it's a work of art that I
+                will treasure for generations.
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+                  alt="James Wilson"
+                />
+              </div>
+              <div class="author-info">
+                <h4>James Wilson</h4>
+                <p>CEO, Fortis Group</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              <p>
+                From the impeccable service to the exceptional quality of their
+                products, Luxe Couture has redefined what luxury means to me. My
+                handbag receives compliments everywhere I go.
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108755-2616b786d4d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+                  alt="Sophia Martinez"
+                />
+              </div>
+              <div class="author-info">
+                <h4>Sophia Martinez</h4>
+                <p>Fashion Editor</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              <p>
+                I've been a loyal customer for over a decade. Luxe Couture's
+                commitment to excellence never wavers. Their tailored suits are
+                simply unparalleled in fit and quality.
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+                  alt="Alexander Chen"
+                />
+              </div>
+              <div class="author-info">
+                <h4>Alexander Chen</h4>
+                <p>Investment Banker</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <div class="container">
+        <h2>Join Our <span class="gold">Exclusive</span> Circle</h2>
+        <p>
+          Subscribe to our newsletter for early access to new collections,
+          private events, and special offers reserved for our most discerning
+          clients.
+        </p>
+
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email address" required />
+          <button type="submit" class="btn btn-filled">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>LUXE COUTURE</h3>
+            <p>
+              Redefining luxury fashion since 1985. Craftsmanship, quality, and
+              timeless elegance.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-pinterest-p"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#products">Collections</a></li>
+              <li><a href="#categories">Categories</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#">Personal Shopping</a></li>
+              <li><a href="#">Tailoring & Alterations</a></li>
+              <li><a href="#">International Delivery</a></li>
+              <li><a href="#">Gift Wrapping</a></li>
+              <li><a href="#">VIP Events</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Contact</h3>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt gold"></i> 123 Luxury Avenue,
+                New York, NY
+              </li>
+              <li><i class="fas fa-phone gold"></i> +1 (555) 123-4567</li>
+              <li>
+                <i class="fas fa-envelope gold"></i> contact@luxecouture.com
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>
+            &copy; 2023 Luxe Couture. All rights reserved. | Portfolio/Demo
+            Project
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mainNav = document.getElementById("mainNav");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mainNav.classList.toggle("active");
+        mobileMenuBtn.innerHTML = mainNav.classList.contains("active")
+          ? '<i class="fas fa-times"></i>'
+          : '<i class="fas fa-bars"></i>';
+      });
+
+      // Close mobile menu when clicking a link
+      const navLinks = document.querySelectorAll("nav ul li a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mainNav.classList.remove("active");
+          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Form submission
+      const newsletterForm = document.querySelector(".newsletter-form");
+      newsletterForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = newsletterForm.querySelector("input").value;
+        alert(
+          `Thank you for subscribing with ${email}. You'll now receive our exclusive updates.`
+        );
+        newsletterForm.reset();
+      });
+    </script>
+  </body>
+</html>
